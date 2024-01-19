@@ -25,9 +25,9 @@ Neste projeto utilizaremos teste funcionais simples (caixa preta positivos e neg
 
 
 # 📥  Softwares utilizados
-- 🔗 [NodeJS](https://nodejs.org/en/download) -versão 12.22.9 
+- 🔗 [NodeJS](https://nodejs.org/en/download) -versão 12.22.9 .
+- 🔗 [VSCode](https://code.visualstudio.com/) - versão 1.85.1 .
 - 🔗 [Git e Git Bash](https://git-scm.com/downloads) 
-- 🔗 [VSCode](https://code.visualstudio.com/) - versão 1.85.1 
 
 #   Ferramenta  utilizada:
 - Playwright versão 1.38.1
