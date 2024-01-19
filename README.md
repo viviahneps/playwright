@@ -4,10 +4,11 @@
 ## Descrição 
 <p align="left">Projeto desenvolvido para prática de criação de scripts de teste automatizado sobre a aplicação do "BARRIGA REACT".
  
-## Sobre o site Barriga React:
+## Sobre o Barriga React:
  Aplicação desenvolvida pelo Francisco Wagner Costa Aquino, após efetuado cadastro do usuário no site permite efetuar a inclusçao e exclusão de contas de despesas pagas e pendentes para controle do SR. Barriga de seus aluguéis.
- -Site: https://barrigareact.wcaquino.me
- -Código da aplicação: https://github.com/wcaquino/seubarriga-rest
+
+ -Site: https://barrigareact.wcaquino.me .
+ -Código da aplicação: https://github.com/wcaquino/seubarriga-rest 
 
 ## Plano de Teste: 
 Neste projeto utilizaremos teste funcionais simples (caixa preta positivos e negativos) conforme RTF abaixo: 
