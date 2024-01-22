@@ -16,6 +16,7 @@ Neste projeto utilizaremos teste funcionais simples (caixa preta positivos e neg
 | Cenários de Teste                                                                         | Tipo de Teste       |
 | ------------------------------------------------------------------------------------------|---------------------|
 | Verificar se cadastro de usuário é efetuado com sucesso na aplicação Barriga              | Funcional POSITIVO  |
+| Verificar se login com a conta cadastrada é efetuado com sucesso na aplicação Barriga     | Funcional POSITIVO  |
 | Verificar se movimentação -PAGA de conta é inserida com sucesso na aplicação Barriga      | Funcional POSITIVO  |
 | Verificar se movimentação -PENDENTE de conta é inserida com sucesso na aplicação Barriga  | Funcional POSITIVO  |
 | Verificar se movimentação de conta é exibida no extrato com sucesso na aplicação Barriga  | Funcional POSITIVO  |
