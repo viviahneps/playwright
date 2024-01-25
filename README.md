@@ -22,6 +22,7 @@ Neste projeto utilizaremos teste funcionais simples (caixa preta positivos e neg
 | Verificar se movimentação de conta é exibida no extrato com sucesso na aplicação Barriga  | Funcional POSITIVO  |
 | Verificar se movimentação conta é excluida com sucesso na aplicação Barriga               | Funcional POSITIVO  |
 | Verificar se movimentação conta é alterada com sucesso na aplicação Barriga               | Funcional POSITIVO  |
+| Verificar se movimentação de conta é EDITADA-STATUS com sucesso na aplicação Barriga      | Funcional POSITIVO  |
 | Verificar se alteração de conta é efetuada com sucesso na aplicação Barriga               | Funcional POSITIVO  |
 | Verificar se cadastro de usuário já inserido não é efetuado com sucesso                   | Funcional NEGATIVO  |
 | Verificar se cadastro de usuário já inserido não é efetuado com sucesso                   | Funcional NEGATIVO  |
