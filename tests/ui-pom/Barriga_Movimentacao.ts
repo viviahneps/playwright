@@ -31,17 +31,35 @@ async preenche_movimento( dt_transac:string, dt_pag: string, descricao : string,
     await this.menu_movimento.click();
     await this.dt_transacao.pressSequentially(dt_transac);
     await this.dt_pagamento.pressSequentially(dt_pag);
-    await this.descricao.fill(descricao);
-    await this.valor.fill(valor) ; 
+    await this.descricao.pressSequentially(descricao);
+    await this.valor.pressSequentially(valor) ; 
     await this.interessado.fill(interess);
     await this.select_conta.selectOption(conta);
      if(flag== true){
     await this.btn_status.click();
     }
-    await this.page.screenshot({path:`Screen/mov_antes.png`});
+    await this.page.screenshot({path:`evidencia/dados_mov_pos.png`});
     this.btn_salvar.click();
   };
 
+  async preenche_movimento_vazio(){
+    await this.menu_movimento.click();
+    this.btn_salvar.click(); 
+  };
 
+   async preenche_movimento_neg( dt_transac:string, dt_pag: string, descricao : string, valor: string,interess: string, conta: string,flag:boolean){
+    await this.menu_movimento.click();
+    await this.dt_transacao.pressSequentially(dt_transac);
+    await this.dt_pagamento.pressSequentially(dt_pag);
+    await this.descricao.pressSequentially(descricao);
+    await this.valor.pressSequentially(valor) ; 
+    await this.interessado.pressSequentially(interess);
+    await this.select_conta.selectOption(conta);
+     if(flag== true){
+      await this.btn_status.click();
+     }
+    await this.page.screenshot({path:`evidencia/dados_mov_neg.png`});
+    this.btn_salvar.click();
+  };
 }
 export default Barriga_Movimentacao;

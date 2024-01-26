@@ -28,7 +28,7 @@ class Barriga_Extrato {
 
 async busca_movimento (nome_mov: string){
  await this.linha_mov.getByText(nome_mov);
- await this.page.screenshot({fullPage:true , path:`Screen/exibe_mov.png`});
+ await this.page.screenshot({fullPage:true , path:`evidencia/lista_mov_pos.png`});
 }
 
 async edita_dados_mov (linha,descricao:string,valor){
@@ -42,7 +42,7 @@ async edita_dados_mov (linha,descricao:string,valor){
     await this.Ext_valor.clear();
     await this.Ext_valor.pressSequentially(valor)
     await this.btn_ext_salvar.click();
-    await this.page.screenshot({fullPage:true , path:`Screen/edit_mov.png`});
+    await this.page.screenshot({fullPage:true , path:`evidencia/edit_mov_pos.png`});
    }
    
    async edita_status_mov (){
@@ -53,7 +53,7 @@ async edita_dados_mov (linha,descricao:string,valor){
     await this.page.waitForTimeout(3000);
     await this.Ext_btn_status.click();
     await this.btn_ext_salvar.click();
-    await this.page.screenshot({fullPage:true , path:`Screen/edit_status.png`});
+    await this.page.screenshot({fullPage:true , path:`evidencia/edit_status_pos.png`});
    } 
    
     async exclui_mov(){
@@ -61,7 +61,7 @@ async edita_dados_mov (linha,descricao:string,valor){
     await expect(this.page).toHaveURL('https://barrigareact.wcaquino.me/extrato');
     await  this.page.waitForTimeout(3000);
     await this.btn_excluir.click();
-    await this.page.screenshot({fullPage:true , path:`Screen/excl_mov.png`});
+    await this.page.screenshot({fullPage:true , path:`evidencia/excl_mov_pos.png`});
    };
 
 }  

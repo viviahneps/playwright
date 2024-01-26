@@ -24,9 +24,12 @@ class Barriga_Conta {
  async edita_conta (nome_mov: string){
  await this.menu_settings.click();
  await this.menu_conta.click();
+ await expect(this.page).toBeNull
+
+ 
  await this.cnt_btn_editar.click();
  await this.nome_conta.fill(nome_mov);
- await this.page.screenshot({path:`Screen/edit_conta_1.png`});
+ await this.page.screenshot({path:`evidencia/edit_conta_pos.png`});
  await this.cnt_btn_salvar.click();
 }
 
@@ -34,6 +37,15 @@ async exclui_conta (nome_mov: string){
     await this.menu_settings.click();
     await this.menu_conta.click();
     await this.cnt_btn_excluir.click();
-    await this.page.screenshot({path:`Screen/excl_conta_1.png`});
+    await this.page.screenshot({path:`evidencia/excl_conta_pos.png`});
    }
+
+   async preenche_conta_vazio(){
+      await this.menu_settings.click();
+      await this.menu_conta.click();
+      await this.cnt_btn_salvar.click();
+      await this.page.screenshot({path:`evidencia/conta_dados_neg.png`});
+     };
+   
+    
 }  export default Barriga_Conta;
