@@ -3,8 +3,3 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-*.png
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/

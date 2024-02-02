@@ -2,23 +2,22 @@
 import { test, expect } from '@playwright/test';
 import { describe } from 'node:test';
 import { isDate } from 'util/types';
-import Barrigapage from './ui-pom/Barrigapage';
-import Barriga_Extrato from './ui-pom/Barriga_Extrato';
+import Barriga_Setup from './ui-pom/Barriga_Setup'
 import Barriga_Movimentacao from './ui-pom/Barriga_Movimentacao';
+import Barriga_Extrato from './ui-pom/Barriga_Extrato';
 import Barriga_Conta from './ui-pom/Barriga_Conta';
 import Barriga_Cadastro from './ui-pom/Barriga_Cadastro';
 
 
 
-test.describe('Barriga React - Testes Negativo', () => {
     
-  let positivo: Barrigapage;
+  let positivo: Barriga_Setup;
   let extrato: Barriga_Extrato;
   let movimento: Barriga_Movimentacao;
   let conta : Barriga_Conta;
   let cadastro: Barriga_Cadastro;
 
-   
+test.describe('Testes Negativos', ()=>{
 
   test.beforeEach('Setup- Start',async ({page}, testInfo)=>{
     console.log(`Rodando: ${testInfo.title}`);
@@ -26,7 +25,7 @@ test.describe('Barriga React - Testes Negativo', () => {
     movimento= new Barriga_Movimentacao(page);
     conta= new Barriga_Conta(page);
     cadastro= new Barriga_Cadastro(page);
-    positivo = new Barrigapage(page);
+    positivo = new Barriga_Setup(page);
     
   });
 
@@ -122,7 +121,8 @@ test.describe('Barriga React - Testes Negativo', () => {
   test('Efetuar cadastro de movimento - Valor vazio', async ({ page }) => { 
     await positivo.logon_negativo("with-student@em00lc11h.mailosaur.net", "1234");
     await positivo.reset();
-    await movimento.preenche_movimento('2024-01-23','2024-01-23', "Conta Playwright_PAGO"," ","Playwright Barriga", 'Conta para movimentacoes', true);
+    var dt = new Date("01-11-2024");
+    await movimento.preenche_movimento("Conta Playwright_PAGO"," ","Playwright Barriga", 'Conta para movimentacoes', true);
     await expect(page).toHaveURL('https://barrigareact.wcaquino.me/movimentacao');
     await page.waitForTimeout(3000);
     const mensagem =page.locator('.toast-message').nth(0);
@@ -133,7 +133,8 @@ test.describe('Barriga React - Testes Negativo', () => {
   test('Efetuar cadastro de movimento - Descrição vazio', async ({ page }) => { 
     await positivo.logon_negativo("with-student@em00lc11h.mailosaur.net", "1234");
     await positivo.reset();
-    await movimento.preenche_movimento('2024-01-23','2024-01-23', "Conta Playwright_PAGO","300,05 ","Playwright Barriga", 'Conta para movimentacoes', true);
+    var dt = new Date("01-11-2024");
+    await movimento.preenche_movimento("Conta Playwright_PAGO","300,05 ","Playwright Barriga", 'Conta para movimentacoes', true);
     await expect (page).toHaveURL('https://barrigareact.wcaquino.me/movimentacao');
     await page.waitForTimeout(3000);
     const mensagem =page.locator('.toast-message').nth(0);
@@ -145,7 +146,8 @@ test.describe('Barriga React - Testes Negativo', () => {
     await positivo.logon_negativo("with-student@em00lc11h.mailosaur.net", "1234");
     await positivo.reset();
     await page.waitForTimeout(3000);
-    await movimento.preenche_movimento('2024-01-23','2024-01-23', " ","300,05 ","Playwright Barriga", 'Conta para movimentacoes', true);
+    var dt = new Date("01-11-2024");
+    await movimento.preenche_movimento(" ","300,05 ","Playwright Barriga", 'Conta para movimentacoes', true);
     await expect (page).toHaveURL('https://barrigareact.wcaquino.me/movimentacao');
     await page.waitForTimeout(3000);
     const mensagem =page.locator('.toast-message').nth(0);
@@ -161,6 +163,4 @@ test.describe('Barriga React - Testes Negativo', () => {
     await expect(mensagem).toHaveText("Erro: Error: Request failed with status code 400");
     await page.screenshot( {fullPage:true, path:`evidencia/conta_vazio_msg.png`});
   });
-
-
 });

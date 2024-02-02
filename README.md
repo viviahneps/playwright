@@ -23,7 +23,7 @@ Link para tutorial (Rodrigo de Brito)
 - 4) Após efetuado os passos anteriores basta executar o comando: npx playwright test
 
 # Estrutura do projeto:
-- /evidencia -> Screenshots da execução de cada testes
+- //ui-pom/evidencia/ -> Screenshots da execução de cada testes
 - /report -> relatório .zip da execução
 - /tests -> Estrutura de testes da aplicação
    * BarrigaReact_negativo-test.spec.ts - Script de testes negativos.

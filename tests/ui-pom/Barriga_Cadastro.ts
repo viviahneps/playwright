@@ -1,7 +1,7 @@
 import { type Page, type Locator , expect } from '@playwright/test';
 import { match } from 'assert';
 import { randomInt } from 'crypto';
-import Barrigapage from './Barrigapage';
+import Barriga_Setup from './Barriga_Setup';
 
 class Barriga_Cadastro{
     readonly page: Page;
@@ -26,12 +26,14 @@ class Barriga_Cadastro{
     }
 
    async geradorRandon(){
-    return Math.floor(Math.random() * 50);
+    return Math.floor(Math.random() * 50)+4;
    }
 
       async preenche_cadastro(){
+      await this.page.waitForTimeout(4000);
      const nome="Teste_Playwrght"+(await this.geradorRandon()).toString();
-     await this.page.goto('https://barrigareact.wcaquino.me');
+     await this.page.goto('/');
+     await this.page.waitForTimeout(3000);
      await this.menu_registrar.click();
      await this.cad_nome.pressSequentially(nome); 
      var fakemail="playwright"+(await this.geradorRandon()).toString()+"@mail.com.br"; 
@@ -42,12 +44,14 @@ class Barriga_Cadastro{
     
      }
      async preenche_cadastro_vazio(){
+        await this.page.waitForTimeout(4000);
         await this.page.goto('https://barrigareact.wcaquino.me');
         await this.menu_registrar.click();
         this.btn_registrar.click(); 
       };
 
       async preenche_cadastro_neg(nome: string, email:string, senha:string){
+        await this.page.waitForTimeout(4000);
         await this.page.goto('https://barrigareact.wcaquino.me');
         await this.menu_registrar.click();
         await this.cad_nome.pressSequentially(nome); 
