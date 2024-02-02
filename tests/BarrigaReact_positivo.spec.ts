@@ -88,7 +88,7 @@ test.describe('Testes Positivo',() =>{
     await page.waitForTimeout(4000);
     await extrato.exclui_mov("Movimentacao para exclusao");
     await page.waitForTimeout(4000);
-    const mensagem =page.locator('.toast-message').nth(0);
+    const mensagem =page.locator('.toast-message');
     await expect(mensagem).toHaveText("Movimentação removida com sucesso!");
     await page.screenshot({fullPage:true , path:`evidencia/excl_mov_msg.png`});
   });

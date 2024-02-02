@@ -35,6 +35,11 @@ Link para tutorial (Rodrigo de Brito)
    * Barriga_Movimento - Mapeamento página de Movimento.
    * Barrigapage - Mapeamento de metodos de setup e finalização do site (logon loff)
 
+## Oportunidades de melhoria: 
+- Geração de massa automatizada;
+- Configuração de esteira CI/CD;
+- Quantidade de timeout do projeto (diminuição);
+
 ## Plano de Teste utilzado: 
 Neste projeto utilizaremos teste funcionais simples (caixa preta positivos e negativos),apenas via navegador Chrome conforme RTF abaixo: 
 
